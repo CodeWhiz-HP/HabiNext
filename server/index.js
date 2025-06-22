@@ -7,10 +7,7 @@ import habitRoutes from './routes/habits.js';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: [
-    'https://habinext-client-fsditqd1m-codewhiz-hps-projects.vercel.app',
-    'https://habinext.vercel.app' 
-  ],
+  origin: ["https://habinext-client.vercel.app"],
   credentials: true,
 }));
 app.use(express.json());
