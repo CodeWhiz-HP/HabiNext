@@ -9,7 +9,7 @@ export default function Achievements() {
     useEffect(() => {
         const fetchHabits = async () => {
             const token = await auth.currentUser.getIdToken();
-            const res = await fetch(`http://localhost:5000/api/habits/${user.uid}`, {
+            const res = await fetch(`https://habinext-backend.onrender.com/api/habits/${user.uid}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

@@ -49,7 +49,7 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchHabits = async () => {
             const token = await auth.currentUser.getIdToken();
-            const res = await fetch(`http://localhost:5000/api/habits/${user.uid}`, {
+            const res = await fetch(`https://habinext-backend.onrender.com/api/habits/${user.uid}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();
@@ -72,7 +72,7 @@ export default function Dashboard() {
     // Add habit
     const addHabit = async () => {
         const token = await auth.currentUser.getIdToken();
-        fetch("http://localhost:5000/api/habits", {
+        fetch("https://habinext-backend.onrender.com/api/habits", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function Dashboard() {
 
         setTimeout(async () => {
             const token = await auth.currentUser.getIdToken();
-            const res = await fetch(`http://localhost:5000/api/habits/${id}`, {
+            const res = await fetch(`https://habinext-backend.onrender.com/api/habits/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ export default function Dashboard() {
         const token = await auth.currentUser.getIdToken();
 
         try {
-            const res = await fetch(`http://localhost:5000/api/habits/${id}/checkin`, {
+            const res = await fetch(`https://habinext-backend.onrender.com/api/habits/${id}/checkin`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`,
