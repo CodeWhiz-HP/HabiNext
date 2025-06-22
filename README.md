@@ -2,7 +2,7 @@
 
 HabiNext is a full-stack productivity web app that helps users build consistent habits using daily check-ins, motivational quotes, milestone badges, and a clean, distraction-free interface.
 
-🚀 Live Demo: [https://habinext.vercel.app](https://habinext.vercel.app)  
+🚀 Live Demo: [https://habinext-client.vercel.app](https://habinext-client.vercel.app) 
 🔐 Login with Email & Password (Firebase Auth)
 
 ---
