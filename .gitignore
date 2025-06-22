@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React build output
+client/build/
+client/node_modules/
+client/.env
+
+server/.env
+server/node_modules/
+
+# VSCode
+.vscode/
+
+# Firebase cache/local
+.firebase/
+.firebase-debug.log
+
+# Others
+coverage/
+*.pem
+*.key
+
+# IDEs
+.idea/
+*.sw?
