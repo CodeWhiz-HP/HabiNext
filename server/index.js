@@ -7,7 +7,21 @@ import habitRoutes from './routes/habits.js';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: ["https://habinext-client.vercel.app"],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // Allow non-browser tools like Postman
+
+    const allowedOrigins = [
+      'https://habinext.vercel.app', // ✅ your custom domain if you have one
+      'http://localhost:3000'        // ✅ local dev
+    ];
+
+    // ✅ Allow all Vercel preview deployments
+    if (origin.endsWith('.vercel.app') || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
 }));
 app.use(express.json());
