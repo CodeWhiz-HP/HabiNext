@@ -39,7 +39,7 @@ export default function Dashboard() {
     useEffect(() => {
         const interval = setInterval(() => {
             setTimeLeft(getTimeLeftToday());
-        }, 1000); // or use 60000 for once per minute
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
@@ -151,7 +151,7 @@ export default function Dashboard() {
                     });
 
                     toast.success(`🎉 Congrats! 7-day streak for "${updated.name}"`, { duration: 5000, });
-                } else if (updated.streak === 30) {
+                } else if (updated.streak === 3) {
 
                     confetti({
                         particleCount: 100,
@@ -347,7 +347,7 @@ export default function Dashboard() {
                             <HabitCard key={habit._id} habit={habit} deletedId={deletedId} onCheckIn={handleCheckIn} onDelete={handleDelete} onRequestDelete={(habit) => {
                                 setPendingDeleteHabit(habit);
                                 setShowAlert(false); // reset first
-                                setTimeout(() => setShowAlert(true), 50); // 👈 trigger slide-in after mount
+                                setTimeout(() => setShowAlert(true), 50); //  trigger slide-in after mount
                             }} />
                         ))}
                     </div>

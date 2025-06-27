@@ -52,7 +52,7 @@ router.put('/:id/checkin', verifyToken, async (req, res) => {
 
   habit.lastChecked = today;
 
-  const milestones = [7, 30, 100];
+  const milestones = [3, 30, 100];
 
   milestones.forEach((m) => {
     const mStr = String(m);
